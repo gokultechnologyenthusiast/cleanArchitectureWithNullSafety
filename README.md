@@ -1,6 +1,6 @@
 # clean_architecture_reso
 
-A new Flutter project.
+A try to learn clean architecture proposed bt reso coder with null safety.
 
 ## Getting Started
 
