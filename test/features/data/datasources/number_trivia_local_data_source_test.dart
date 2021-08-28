@@ -51,6 +51,7 @@ void main() {
   group('cache number trivia', () {
     final tNumberTriviaModel = NumberTriviaModel(text: "test", number: 1);
     test("should call sharedPreference to cache the data", () {
+      // arrange
       when(mockSharedPreference.setString(any, any))
           .thenAnswer((realInvocation) async => true);
       // act

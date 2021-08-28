@@ -27,32 +27,28 @@ class MockSharedPreferences extends _i1.Mock implements _i2.SharedPreferences {
   Set<String> getKeys() => (super.noSuchMethod(Invocation.method(#getKeys, []),
       returnValue: <String>{}) as Set<String>);
   @override
-  dynamic get(String? key) =>
-      super.noSuchMethod(Invocation.method(#get, [key]));
+  Object? get(String? key) =>
+      (super.noSuchMethod(Invocation.method(#get, [key])) as Object?);
   @override
-  bool getBool(String? key) => (super
-          .noSuchMethod(Invocation.method(#getBool, [key]), returnValue: false)
-      as bool);
+  bool? getBool(String? key) =>
+      (super.noSuchMethod(Invocation.method(#getBool, [key])) as bool?);
   @override
-  int getInt(String? key) =>
-      (super.noSuchMethod(Invocation.method(#getInt, [key]), returnValue: 0)
-          as int);
+  int? getInt(String? key) =>
+      (super.noSuchMethod(Invocation.method(#getInt, [key])) as int?);
   @override
-  double getDouble(String? key) => (super
-          .noSuchMethod(Invocation.method(#getDouble, [key]), returnValue: 0.0)
-      as double);
+  double? getDouble(String? key) =>
+      (super.noSuchMethod(Invocation.method(#getDouble, [key])) as double?);
   @override
-  String getString(String? key) =>
-      (super.noSuchMethod(Invocation.method(#getString, [key]), returnValue: '')
-          as String);
+  String? getString(String? key) =>
+      (super.noSuchMethod(Invocation.method(#getString, [key])) as String?);
   @override
   bool containsKey(String? key) =>
       (super.noSuchMethod(Invocation.method(#containsKey, [key]),
           returnValue: false) as bool);
   @override
-  List<String> getStringList(String? key) =>
-      (super.noSuchMethod(Invocation.method(#getStringList, [key]),
-          returnValue: <String>[]) as List<String>);
+  List<String>? getStringList(String? key) =>
+      (super.noSuchMethod(Invocation.method(#getStringList, [key]))
+          as List<String>?);
   @override
   _i3.Future<bool> setBool(String? key, bool? value) =>
       (super.noSuchMethod(Invocation.method(#setBool, [key, value]),
