@@ -1,6 +1,6 @@
 # clean_architecture_reso
 
-A try to learn clean architecture proposed bt reso coder with null safety.
+A try to learn clean architecture proposed by reso coder with null safety.
 
 ## Getting Started
 
