@@ -14,7 +14,7 @@ import 'number_trivia_remote_data_source_test.mocks.dart';
 @GenerateMocks([http.Client])
 void main() {
   NumberTriviaRemoteDataSourceImpl? numberTriviaRemoteDataSourceImpl;
-  var mockHttpClient = MockClient();
+  final mockHttpClient = MockClient();
 
   setUp(() {
     numberTriviaRemoteDataSourceImpl =

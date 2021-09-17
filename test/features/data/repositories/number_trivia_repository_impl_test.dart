@@ -16,9 +16,9 @@ import 'number_trivia_repository_impl_test.mocks.dart';
 @GenerateMocks(
     [NumberTriviaRemoteDataSource, NumberTriviaLocalDataSource, NetworkInfo])
 void main() {
-  var mockRemoteDataSource = MockNumberTriviaRemoteDataSource();
-  var mockLocalDataSource = MockNumberTriviaLocalDataSource();
-  var mockNetworkInfo = MockNetworkInfo();
+  final mockRemoteDataSource = MockNumberTriviaRemoteDataSource();
+  final mockLocalDataSource = MockNumberTriviaLocalDataSource();
+  final mockNetworkInfo = MockNetworkInfo();
   NumberTriviaRepositoryImpl? repository;
 
   setUp(() {

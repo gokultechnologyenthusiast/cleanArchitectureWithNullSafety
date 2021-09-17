@@ -89,3 +89,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  # some mockito run commands
+  # to build mocks - flutter pub run build_runner build
+  # to remove conflicting files - flutter packages pub run build_runner build --delete-conflicting-outputs
