@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.clean_architecture_reso">
+    package="com.example.clean_architeture_with_nullsafty_new">
    <application
-        android:label="clean_architecture_reso"
+        android:label="clean_architeture_with_nullsafty_new"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -38,4 +38,5 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

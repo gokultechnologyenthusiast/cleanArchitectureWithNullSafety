@@ -1,8 +1,8 @@
-name: clean_architecture_reso
+name: clean_architecture_with_nullsafty_new
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
-# pub.dev using `pub publish`. This is preferred for private packages.
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
@@ -20,6 +20,12 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
 dependencies:
   flutter:
     sdk: flutter
@@ -27,26 +33,33 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  # Service locator
-  get_it: ^7.2.0
-  # Bloc for state management
-  flutter_bloc: ^7.2.0
-  # Value equality
+  cupertino_icons: ^1.0.4
+  # for value equality
   equatable: ^2.0.3
   # Functional programming thingies
-  dartz: ^0.10.0-nullsafety.2
-  # Remote API
-  internet_connection_checker: ^0.0.1+2
-  http: ^0.13.0
-  # Local cache
-  shared_preferences: ^2.0.6
+  dartz: ^0.10.1
+  #for local storage
+  shared_preferences: ^2.0.11
+  # for checking connectivity
+  internet_connection_checker: ^0.0.1+3
+  # for rest api call
+  http: ^0.13.4
+  # for state management
+  flutter_bloc: ^8.0.0
+  # for dependency injection
+  get_it: ^7.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mockito: ^5.0.14
-  build_runner: ^2.0.0
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^1.0.4
+  mocktail: ^0.2.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -89,7 +102,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
-  # some mockito run commands
-  # to build mocks - flutter pub run build_runner build
-  # to remove conflicting files - flutter packages pub run build_runner build --delete-conflicting-outputs

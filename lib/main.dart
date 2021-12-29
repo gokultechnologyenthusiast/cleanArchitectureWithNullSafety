@@ -1,10 +1,12 @@
-import 'package:clean_architecture_reso/features/number_trivia/presentation/pages/number_trivia_page.dart';
+import 'package:clean_architecture_with_nullsafty_new/features/number_trivia/presentation/pages/number_trivia_page.dart';
+import 'package:clean_architecture_with_nullsafty_new/injection_container.dart'
+    as di;
 import 'package:flutter/material.dart';
-import 'injection_container.dart' as di;
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await di.init();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,10 +17,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Number Trivia',
       theme: ThemeData(
-        primaryColor: Colors.green.shade800,
-        accentColor: Colors.green.shade600,
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: Colors.green.shade800,
+          secondary: Colors.green.shade600,
+        ),
       ),
-      home: NumberTriviaPage(),
+      home: const NumberTriviaPage(),
     );
   }
 }

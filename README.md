@@ -1,16 +1,11 @@
-# clean_architecture_reso
+# clean_architecture_with_nullsafety_new
 
-A try to learn clean architecture proposed bt reso coder with null safety.
+A try out to learn clean architecture proposed by reso coder.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is built with latest flutter version, satisfies null safety and mocktail is used as testing framework.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The link to the tutorial of original is :
+    - https://youtube.com/playlist?list=PLB6lc7nQ1n4iYGE_khpXRdJkJEp9WOech
+    - https://resocoder.com/category/tutorials/flutter/tdd-clean-architecture/
