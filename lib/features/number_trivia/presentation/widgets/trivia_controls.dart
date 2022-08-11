@@ -55,13 +55,14 @@ class _TriviaControlsState extends State<TriviaControls> {
           children: [
             Expanded(
               child: ElevatedButton(
+                key: const Key("ElevatedButtonConcrete"),
                 onPressed: dispatchConcrete,
-                child: const Text('Search'),
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(
                     Theme.of(context).colorScheme.secondary,
                   ),
                 ),
+                child: const Text('Search'),
               ),
             ),
             const SizedBox(
@@ -69,13 +70,14 @@ class _TriviaControlsState extends State<TriviaControls> {
             ),
             Expanded(
               child: ElevatedButton(
+                key: const Key("ElevatedButtonRemote"),
                 onPressed: dispatchRemote,
-                child: const Text('Get random trivia'),
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(
                     Colors.grey,
                   ),
                 ),
+                child: const Text('Get random trivia'),
               ),
             ),
           ],

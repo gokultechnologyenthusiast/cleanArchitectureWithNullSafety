@@ -11,14 +11,14 @@ import '../../../fixtures/fixture_reader.dart';
 
 class MockUri extends Mock implements Uri {}
 
-class MochHttpClient extends Mock implements http.Client {}
+class MockHttpClient extends Mock implements http.Client {}
 
 void main() {
   late NumberTriviaRemoteDatasourceImpl numberTriviaRemoteDataSourceImpl;
-  late MochHttpClient mochHttpClient;
+  late MockHttpClient mochHttpClient;
 
   setUp(() {
-    mochHttpClient = MochHttpClient();
+    mochHttpClient = MockHttpClient();
     numberTriviaRemoteDataSourceImpl =
         NumberTriviaRemoteDatasourceImpl(client: mochHttpClient);
     registerFallbackValue(MockUri());

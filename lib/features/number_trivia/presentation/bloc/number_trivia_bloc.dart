@@ -1,9 +1,9 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:bloc/bloc.dart';
 import 'package:clean_architecture_with_nullsafty_new/core/error/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/input_converter.dart';
 import '../../domain/entities/number_trivia.dart';
