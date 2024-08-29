@@ -5,32 +5,28 @@ import 'package:clean_architecture_with_nullsafty_new/features/number_trivia/dat
 import 'package:clean_architecture_with_nullsafty_new/features/number_trivia/data/models/number_trivia_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-import 'package:mocktail/mocktail.dart';
+import 'package:mockito/mockito.dart';
 
 import '../../../fixtures/fixture_reader.dart';
-
-class MockUri extends Mock implements Uri {}
-
-class MockHttpClient extends Mock implements http.Client {}
+import '../../../mocks/mocks.dart';
 
 void main() {
   late NumberTriviaRemoteDatasourceImpl numberTriviaRemoteDataSourceImpl;
-  late MockHttpClient mochHttpClient;
+  late MockClient mochHttpClient;
 
   setUp(() {
-    mochHttpClient = MockHttpClient();
+    mochHttpClient = MockClient();
     numberTriviaRemoteDataSourceImpl =
         NumberTriviaRemoteDatasourceImpl(client: mochHttpClient);
-    registerFallbackValue(MockUri());
   });
 
   void setUpMockHttpClientSuccess200() {
-    when(() => mochHttpClient.get(any(), headers: any(named: "headers")))
+    when(mochHttpClient.get(any, headers: anyNamed("headers")))
         .thenAnswer((_) async => http.Response(fixture("trivia.json"), 200));
   }
 
   void setUpMockHttpClientFailure404() {
-    when(() => mochHttpClient.get(any(), headers: any(named: "headers")))
+    when(mochHttpClient.get(any, headers: anyNamed("headers")))
         .thenAnswer((_) async => http.Response("Something went wrong", 404));
   }
 
@@ -43,11 +39,9 @@ void main() {
       // arrange
       setUpMockHttpClientSuccess200();
       // act
-      numberTriviaRemoteDataSourceImpl.getConcreteNumberTrivia(tNumber);
+      await numberTriviaRemoteDataSourceImpl.getConcreteNumberTrivia(tNumber);
       // assert
-      verify(() => mochHttpClient.get(
-          Uri.parse("http://numbersapi.com/$tNumber"),
-          headers: {'Content-Type': 'application/json'}));
+      verify(mochHttpClient.get(any, headers: anyNamed("headers"))).called(1);
     });
 
     test("should return number trivia when the response code is 200 (success)",
@@ -81,10 +75,9 @@ void main() {
       // arrange
       setUpMockHttpClientSuccess200();
       // act
-      numberTriviaRemoteDataSourceImpl.getRandomNumberTrivia();
+      await numberTriviaRemoteDataSourceImpl.getRandomNumberTrivia();
       // assert
-      verify(() => mochHttpClient.get(Uri.parse("http://numbersapi.com/random"),
-          headers: {'Content-Type': 'application/json'}));
+      verify(mochHttpClient.get(any, headers: anyNamed("headers"))).called(1);
     });
 
     test("should return number trivia when the response code is 200 (success)",

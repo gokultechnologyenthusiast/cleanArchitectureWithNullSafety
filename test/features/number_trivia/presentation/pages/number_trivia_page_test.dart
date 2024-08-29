@@ -13,21 +13,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:http/http.dart' as http;
 
-class MockSharedPreferences extends Mock implements SharedPreferences {}
-
-class MockUri extends Mock implements Uri {}
-
-class MockHttpClient extends Mock implements http.Client {}
-
-class MockInternetConnectionChecker extends Mock
-    implements InternetConnectionChecker {}
-
-class MockInputConverter extends Mock implements InputConverter {}
+import '../../../../mocks/mocks.dart';
 
 final sl = GetIt.instance;
 
@@ -80,7 +70,7 @@ void main() {
 
       //! external
       sl.registerSingleton<SharedPreferences>(MockSharedPreferences());
-      sl.registerSingleton<http.Client>(MockHttpClient());
+      sl.registerSingleton<http.Client>(MockClient());
       sl.registerSingleton<InternetConnectionChecker>(
           MockInternetConnectionChecker());
     },

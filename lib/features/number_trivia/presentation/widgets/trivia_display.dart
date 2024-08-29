@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 import '../../domain/entities/number_trivia.dart';
 
 class TriviaDisplay extends StatelessWidget {
-  const TriviaDisplay({
-    Key? key,
-    required this.trivia,
-  }) : super(key: key);
+  const TriviaDisplay({Key? key, required this.trivia}) : super(key: key);
 
   final NumberTrivia trivia;
 
