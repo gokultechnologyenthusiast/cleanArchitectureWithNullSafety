@@ -5,9 +5,7 @@ import '../bloc/number_trivia_bloc.dart';
 import 'widgets.dart';
 
 class NumberTriviaView extends StatelessWidget {
-  const NumberTriviaView({
-    Key? key,
-  }) : super(key: key);
+  const NumberTriviaView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

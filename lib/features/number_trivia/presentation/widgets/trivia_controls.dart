@@ -4,9 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/number_trivia_bloc.dart';
 
 class TriviaControls extends StatefulWidget {
-  const TriviaControls({
-    Key? key,
-  }) : super(key: key);
+  const TriviaControls({Key? key}) : super(key: key);
 
   @override
   State<TriviaControls> createState() => _TriviaControlsState();
@@ -58,7 +56,7 @@ class _TriviaControlsState extends State<TriviaControls> {
                 key: const Key("ElevatedButtonConcrete"),
                 onPressed: dispatchConcrete,
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
+                  backgroundColor: WidgetStateProperty.all<Color>(
                     Theme.of(context).colorScheme.secondary,
                   ),
                 ),
@@ -73,7 +71,7 @@ class _TriviaControlsState extends State<TriviaControls> {
                 key: const Key("ElevatedButtonRemote"),
                 onPressed: dispatchRemote,
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
+                  backgroundColor: WidgetStateProperty.all<Color>(
                     Colors.grey,
                   ),
                 ),
